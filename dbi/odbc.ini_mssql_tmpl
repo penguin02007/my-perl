@@ -1,0 +1,7 @@
+[MSSQL]
+Driver = FreeTDS
+tds_version = 8.0
+Address = mssql.example.local
+Port = 1433
+TDS Version = 8.0
+Database = name-db
