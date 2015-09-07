@@ -1,10 +1,11 @@
 
--pod
+=pod
+=head1 DESCRIPTION
 Get home drives and list top level directories with specific keywords:
 Query base directory and store home drives into array
 Loop over each home drive and list top level directories with specific keyword
 save each result to a text file
--cut
+=cut
 use v5.012;	# use bare readdir in while loop
 use File::DosGlob 'glob';
 
