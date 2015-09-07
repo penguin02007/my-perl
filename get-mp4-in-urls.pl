@@ -1,14 +1,20 @@
+=pod
+
+=head1 DESCRIPTION
+
+Download perlmaven beginner videos in a perl style.
+
+=cut
+
 use v5.012;
 use LWP::Simple;
 
-my $basedir='C:\Users\lchan\perlmaven.com\perlmaven.com';
+my $basedir = shift @ARGV;
 opendir my $dh1, $basedir;
 my @urls = readdir $dh1;
 
 foreach my $url (@urls) {
 	next unless $url =~ /^beginner-perl-maven/;
-	say "$basedir\\$url";
-
 	open (my $fh, "<", "$basedir\\$url")
 		or die $!;
 	while (my $line = <$fh>) {
