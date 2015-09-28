@@ -22,7 +22,7 @@ opendir (my $bdh1, $basedir) or die $!;
 #@dots = grep { /^\./ && -f "$some_dir/$_" } readdir($dh);
 
 my ($homedir, @homedirs);
-
+# Get and store a list of home dirs.
 while (readdir $bdh1) {
 	next unless $_ =~ m/(kze|cherie)/i;
 	push @homedirs, $_;
@@ -39,5 +39,4 @@ foreach my $homedir (@homedirs){
 	closedir $hfh;
 	$i++;
 }
-#for (1 .. $#homedirs ) { say $_ ; }
 exit 0;
