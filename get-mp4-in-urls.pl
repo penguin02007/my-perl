@@ -2,13 +2,16 @@
 
 =head1 DESCRIPTION
 
-Download perlmaven beginner videos in a perl style.
+Download perlmaven beginner videos in a perl style,
+Pass argument with a directory with list of urls.
+wget -r -A "beginner-perl-maven*" http://perlmaven.com/
 
 =cut
 
 use v5.012;
 use LWP::Simple;
 
+die "Usage: $0 DIR" if not @ARGV;
 my $basedir = shift @ARGV;
 opendir my $dh1, $basedir;
 my @urls = readdir $dh1;
