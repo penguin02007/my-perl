@@ -1,8 +1,9 @@
 #	Interview Question
 #	Write a program to loop 1 through 100,
-#	Print Fiz if number is divisible by 3,
-#	Print Buzz if number is divisible by 5,
-#	Print FizBuzz if number is divisible by 15.
+#	print Fiz if number is divisible by 3,
+#	print Buzz if number is divisible by 5,
+#	print FizBuzz if number is divisible by 15.
+#	print number for everything else.
 
 use 5.16.0;
 	foreach my $n ( 1..100 ) {
