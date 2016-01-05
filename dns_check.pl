@@ -1,17 +1,22 @@
 use feature qw(say);
+use File::Basename;
 
-#  POSIX for non-printable characters
-my $inv_rex = qr/[^[:print:]]/;
+# This script assume input use space as seperator, it will fail otherwise.
+
+my $rex3 = qr/[^\w\s\-_.]+/;
 my $matched = 0;
-my $file1 = 'replaced.txt';
+my $parsed = fileparse($ARGV[0]);
+my $file1 = "$parsed.fixed";
 
-while (<>) {
-	chomp;
-	@fields =  split;
-	foreach my $field (@fields) {
-	$field =~ s/$inv_rex//g && $matched++;
-    }
-    open my $fh1, '>>:encoding(UTF-8)', $file1 or die "Could not open $file1";
- }
+#$^|=".bak";
+#$\ = $/;
+
+while ( my $line = <> ) {
+        chomp $line;
+        $line =~ s/$rex3//g && $matched++;
+        open my $fh1, '>>:encoding(UTF-8)', $file1 or die "Could not open $file1";
+        say $fh1 $line;
+        close $fh1;        
+}
 say "$matched fields replaced";
-
+say "Output file: $file1";
