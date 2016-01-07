@@ -1,4 +1,3 @@
-#	Interview Question
 #	Write a program to loop 1 through 100,
 #	print Fiz if number is divisible by 3,
 #	print Buzz if number is divisible by 5,
@@ -6,15 +5,16 @@
 #	print number for everything else.
 
 use 5.16.0;
-	foreach my $n ( 1..100 ) {
-	# 0 is False
-	if (!($n % 3)) {
-	say "$n - Fiz";
-	} elsif	(!($n % 5)) {
-	say "$n - Buzz";
-	} elsif (!($n % 15)) {
-	say "$n - FizBuzz";
+# Remainder is true and 0 is false
+foreach my $n ( 1..100 ) {
+# 0 is False
+	if (!($n % 15)) {
+		say "$n Fiz Buzz FizBuzz";
+	} elsif	(!($n % 3)) {
+		say "$n Fiz";
+	} elsif (!($n % 5)) {
+		say "$n Buzz";
 	} else {
-	say "$n";
+		say $n;
 	}
 }
