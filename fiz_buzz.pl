@@ -5,9 +5,8 @@
 #	print number for everything else.
 
 use 5.16.0;
-# Remainder is true and 0 is false
 foreach my $n ( 1..100 ) {
-# 0 is False
+# Remainder is true and 0 is false
 	if (!($n % 15)) {
 		say "$n Fiz Buzz FizBuzz";
 	} elsif	(!($n % 3)) {

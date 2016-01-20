@@ -1,3 +1,8 @@
+##	http://flylib.com/books/en/1.190.1.39/1/
+##	http://annocpan.org/~CJM/HTML-Tree-5.909-TRIAL/lib/HTML/Tree/Scanning.pod
+##	https://metacpan.org/pod/HTML::Tree
+##	http://www.perlmonks.org/?node_id=1130578
+##	http://search.cpan.org/dist/HTML-Tree/lib/HTML/Tree/Scanning.pod
 use strict;
 use warnings;
 use Data::Dumper;
