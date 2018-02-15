@@ -14,6 +14,18 @@ my $sharex_cmd;
 my $fh1;
 my $fh2;
 
+while (1) {
+  if (cmp_img()) {
+  # The images are the same and within the threshold
+  del_img();
+  }
+  else {
+  # The images differ beyond the threshold
+  notify();
+  del_img();
+  }
+  create_img();
+}
 sub cmp_img {
   my($cmp) = Image::Compare->new();
   $cmp->set_image1(
@@ -43,12 +55,5 @@ sub del_img {
 }
 
 sub notify {
-  if (cmp_img()) {
-    # The images are the same and within the threshold
-    del_img();
-  }
-  else {
-    # The images differ beyond the threshold
-    del_img();
-  }
+  ...
 }
