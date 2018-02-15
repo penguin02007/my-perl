@@ -5,7 +5,7 @@ use Data::Dumper;
 
 my @matches,;
 my $idrac_cmd = "racadm racdump";
-foreach my $ip (137..168) {
+foreach my $ip (137..144) {
     my $ssh = Net::SSH::Perl->new( "172.20.230.$ip" );
     say "looping 172.20.230.$ip";
     push @matches, "172.20.230.$ip";
